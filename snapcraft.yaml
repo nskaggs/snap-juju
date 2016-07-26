@@ -16,7 +16,7 @@ parts:
       - github.com/juju/juju/...
     build-packages: [git]
 
-   command-juju-wrapper:
-        plugin: copy
-        files:
-            command-juju-wrapper: command-juju-wrapper
+  command-juju-wrapper:
+    plugin: copy
+    files:
+        command-juju-wrapper: command-juju-wrapper
