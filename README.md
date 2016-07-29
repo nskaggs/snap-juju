@@ -1,11 +1,9 @@
 # Juju Snap
 
 ## Building
-After running snapcraft, the build will fail as it uses godeps.
+After running snapcraft, the build will fail as it uses godeps. Run godeps, then attempt to snap again.
 
-godeps -u parts/juju/go/src/github.com/juju/juju/dependencies.tsv
-
-You need to prefix the GOPATH snapcraft uses as well.
+env GOPATH=parts/juju/go godeps -u parts/juju/go/src/github.com/juju/juju/dependencies.tsv
 
 
 ## Known Issues
