@@ -6,6 +6,10 @@ After running snapcraft, the build will fail as it uses godeps.
 godeps -u parts/juju/go/src/github.com/juju/juju/dependencies.tsv
 go install github.com/juju/juju/...
 
+## Known Issues
+ * Small patch to juju source to change path from /var/juju to /var/snap for mutex socket
+ * Godeps needs a plugin to snappify with mucking during build (see https://github.com/snapcore/snapcraft/pull/691)
+
 ## Current State
 Needs devmode.
 
@@ -31,10 +35,6 @@ In order for the juju gui to work, add the following. This should be fixed in sn
 
 /usr/bin/sensible-browser ixr,
 
-## Known Issues
- * Credentials aren't found, preventing deployments on public clouds
- * Small patch to juju source to change path from /var/juju to /var/snap.
- * Godeps needs a plugin to snappify with mucking
 
 ## Want to run under strict mode?
 
