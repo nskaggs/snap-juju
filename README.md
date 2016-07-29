@@ -4,7 +4,9 @@
 After running snapcraft, the build will fail as it uses godeps.
 
 godeps -u parts/juju/go/src/github.com/juju/juju/dependencies.tsv
-go install github.com/juju/juju/...
+
+You need to prefix the GOPATH snapcraft uses as well.
+
 
 ## Known Issues
  * Small patch to juju source to change path from /var/juju to /var/snap for mutex socket
