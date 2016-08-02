@@ -1,17 +1,14 @@
 # Juju Snap
 
 ## Building
-After running snapcraft, the build will fail as it uses godeps. Run godeps, then attempt to snap again.
-
-env GOPATH=parts/juju/go godeps -u parts/juju/go/src/github.com/juju/juju/dependencies.tsv
-
-
-## Known Issues
- * Small patch to juju source to change path from /var/juju to /var/snap for mutex socket
- * Godeps needs a plugin to snappify with mucking during build (see https://github.com/snapcore/snapcraft/pull/691)
+This requires the godeps plugin -- make sure your snapcraft version is > 2.13.1.
 
 ## Current State
 Needs devmode.
+
+## Want to run under strict mode?
+### Known Issues
+ * Small patch to juju source to change path from /var/juju to /var/snap for mutex socket
 
 All features work, but require the following changes to apparmor post-installation for strict mode.
 Add them to /var/lib/snapd/apparmor/profiles/snap.juju.juju and then rebuild the profile.
@@ -35,12 +32,8 @@ In order for the juju gui to work, add the following. This should be fixed in sn
 
 /usr/bin/sensible-browser ixr,
 
-
-## Want to run under strict mode?
-
-sudo sed -i '$ i\                                   
+### One-liner to edit apparmor profile
+sudo sed -i '$ i\
 unix addr="@/var/snap/@{SNAP_NAME}/**",\n/var/lib/lxd/unix.socket rw,\n/etc/default/lxd-bridge rw,\n/usr/bin/ssh ixr,\n/usr/bin/sensible-browser ixr,\n' /var/lib/snapd/apparmor/profiles/snap.juju.juju
 
 sudo apparmor_parser -r /var/lib/snapd/apparmor/profiles/snap.juju.juju
-
-
