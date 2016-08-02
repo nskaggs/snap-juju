@@ -11,7 +11,8 @@ apps:
 
 parts:
   juju:
-    plugin: go
-    go-packages:
-      - github.com/juju/juju/...
-    build-packages: [git]
+    plugin: godeps
+    go-importpath: github.com/juju/juju
+    source: https://github.com/juju/juju.git
+    source-type: git
+    source-tag: juju-2.0-beta13
