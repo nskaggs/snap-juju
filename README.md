@@ -8,7 +8,8 @@ Needs devmode.
 
 ## Want to run under strict mode?
 ### Known Issues
- * Small patch to juju source to change path from /var/juju to /var/snap for mutex socket
+ * Small patch to juju source to change path from /var/juju to /var/snap
+ * Missing support for abstract mutex socket https://bugs.launchpad.net/snappy/+bug/1604967
 
 All features work, but require the following changes to apparmor post-installation for strict mode.
 Add them to /var/lib/snapd/apparmor/profiles/snap.juju.juju and then rebuild the profile.
