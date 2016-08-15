@@ -20,4 +20,4 @@ parts:
     - -bin/filetoconst
     - -bin/winuserdata
     #If you are releasing a build with public streams, also remove the agent
-    #- -bin/jujud
+    - -bin/jujud
