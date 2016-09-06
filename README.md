@@ -5,12 +5,13 @@ This requires the godeps plugin -- make sure your snapcraft version is > 2.13.1.
 
 ## Current State
 Needs devmode.
-
-## Want to run under strict mode?
 ### Known Issues
  * Small patch to juju source to change path from /var/juju to /var/snap
  * Missing support for abstract mutex socket https://bugs.launchpad.net/snappy/+bug/1604967
+ * Missing ssh interface https://bugs.launchpad.net/snappy/+bug/1606574
+ * Missing LXD interface
 
+## Want to run under strict mode?
 All features work, but require the following changes to apparmor post-installation for strict mode.
 Add them to /var/lib/snapd/apparmor/profiles/snap.juju.juju and then rebuild the profile.
 
