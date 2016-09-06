@@ -1,3 +1,5 @@
+THIS WORK IS UPSTREAMED and this repo is deprecated. Please check out https://github.com/juju/juju/.
+
 # Juju Snap
 
 ## Building
