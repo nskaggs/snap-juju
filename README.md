@@ -10,6 +10,7 @@ Needs devmode.
  * Missing support for abstract mutex socket https://bugs.launchpad.net/snappy/+bug/1604967
  * Missing ssh interface https://bugs.launchpad.net/snappy/+bug/1606574
  * Missing LXD interface
+ * Bash completion support https://bugs.launchpad.net/snappy/+bug/1590767
 
 ## Want to run under strict mode?
 All features work, but require the following changes to apparmor post-installation for strict mode.
